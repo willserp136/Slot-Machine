@@ -4,9 +4,10 @@ public class Slot_Machine
 	public static void main (String [] args)
 	{
 		Scanner keyboard = new Scanner (System.in);
-		int tokens;
 		String answer;
-		tokens = 100;
+		Scanner token = new Scanner (System.in);
+		System.out.println ("Input how many tokens you have to play with today.");
+		int tokens = token.nextInt();
 		System.out.println ("Welcome to the Wentworth Slot Machine!");
 		System.out.println("-1 equals Blank");
 		System.out.println("-2 equals Cherry");
@@ -16,7 +17,7 @@ public class Slot_Machine
 		System.out.println("-6 equals Red 7");
 		System.out.println("-7 equals Jackpot");
 		System.out.println ("--Slot Machine--");
-		System.out.println("You have 100 tokens. Each pull costs 1 token. Would you like to play? (Y for yes, N for no)");
+		System.out.println("You have " + tokens + " tokens. Each pull costs 1 token. Would you like to play? (Y for yes, N for no)");
 		
 		answer = keyboard.next ();
 
@@ -43,7 +44,7 @@ public class Slot_Machine
 
 				for(int i = 0; i<wheel.length;i++)
 				{
-					if(wheel[i][0] >=1 && wheel[1][0] <=73)
+					if(wheel[i][0] >=0 && wheel[1][0] <=73)
 					{
 						wheel[i][1] = -1;
 					}
@@ -183,9 +184,3 @@ public class Slot_Machine
 		}
 	}
 }
-
-
-
-
-
-
