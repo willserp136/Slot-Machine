@@ -1,4 +1,4 @@
-iimport java.util.*;
+import java.util.*;
 public class Slot_Machine
 {
 	public static void main (String [] args)
@@ -111,7 +111,7 @@ public class Slot_Machine
 					}
 					else if(wheel[1][1] == -7)
 					{
-						tokens += 1666;
+						tokens += 1667;
 						System.out.println("Congratulations! You've won 1666 tokens!");
 					}
 				}
