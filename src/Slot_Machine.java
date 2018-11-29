@@ -3,18 +3,18 @@ public class Slot_Machine
 {
 	public static void main (String [] args)
 	{
-		
+
 		//Scanner to determine if to continue or not
-		
+
 		Scanner keyboard = new Scanner (System.in);
 		String answer;
-		
+
 		//Scanner to determine value for tokens
-		
+
 		Scanner token = new Scanner (System.in);
 		System.out.println ("Input how many tokens you have to play with today.");
 		int tokens = token.nextInt();
-		
+
 		//Slot Machine start and Key
 		System.out.println ("Welcome to the Wentworth Slot Machine!");
 		System.out.println("-1 equals Blank");
@@ -26,7 +26,7 @@ public class Slot_Machine
 		System.out.println("-7 equals Jackpot");
 		System.out.println ("--Slot Machine--");
 		System.out.println("You have " + tokens + " tokens. Each pull costs 1 token. Would you like to play? (Y for yes, N for no)");
-		
+
 		answer = keyboard.next ();
 
 		int wheel[][] = new int[3][2];
@@ -37,7 +37,7 @@ public class Slot_Machine
 			{
 
 				//Random number generator for the wheels
-				
+
 				wheel[0][0] = (int) (Math.random() * ((128 - 1) + 1)) + 1;
 				wheel[1][0] = (int) (Math.random() * ((128 - 1) + 1)) + 1;
 				wheel[2][0] = (int) (Math.random() * ((128 - 1) + 1)) + 1;
@@ -76,7 +76,7 @@ public class Slot_Machine
 				}
 
 				//Tokens taken away for each roll
-				
+
 				tokens-=1;
 
 				//Winning combinations for 3 of a kind
@@ -115,9 +115,9 @@ public class Slot_Machine
 						System.out.println("Congratulations! You've won 1666 tokens!");
 					}
 				}
-				
+
 				//Winning combination of two cherries
-				
+
 				if (wheel[0][1] == wheel[1][1] || wheel[1][1] == wheel[2][1] || wheel[0][1] == wheel[2][1])
 				{
 					if(wheel[0][1] == -2 && wheel[1][1] == -2)
@@ -136,9 +136,9 @@ public class Slot_Machine
 						System.out.println("Congratulations! You've won 6 tokens!");
 					}
 				}
-				
+
 				//Winning combination for three different types of Bar
-				
+
 				if (wheel[0][1] == wheel[0][1] || wheel[1][1] == wheel[1][1] || wheel[2][1] == wheel[2][1])
 				{
 					if(wheel[0][1] == -3 && wheel[0][1] == -4 && wheel[0][1] == -5)
@@ -173,28 +173,38 @@ public class Slot_Machine
 						System.out.println("Congratulations! You've won 12 tokens!");
 					}
 				}
-				
+
 				//Winning combination for one cherry 
-				
-				if (wheel[0][1] != wheel[1][1] && wheel[0][1] != wheel[2][1] && wheel[1][1] != wheel[0][1] && wheel[1][1] != wheel[2][1] && wheel[2][1] != wheel[0][1] && wheel[2][1] != wheel[1][1])
+
+				if (wheel[0][1] == wheel[0][1] || wheel[1][1] == wheel[1][1] || wheel[2][1] == wheel[2][1])
 				{
 
-					if(wheel[0][1] == -2 || wheel[1][1] == -2 || wheel[2][1] == -2 )
+					if(wheel[0][1] == -2 && wheel[1][1] != -2 && wheel[2][1] != -2)
+					{
+						tokens += 3;
+						System.out.println("Congratulations! You've won 3 tokens!");
+					}
+					else if(wheel[1][1] == -2 && wheel[0][1] != -2 && wheel[2][1] != -2)
+					{
+						tokens += 3;
+						System.out.println("Congratulations! You've won 3 tokens!");
+					}
+					else if(wheel[2][1] == -2&& wheel[0][1] != -2 && wheel[1][1] != -2)
 					{
 						tokens += 3;
 						System.out.println("Congratulations! You've won 3 tokens!");
 					}
 				}
-				
+
 				//Output after every roll
-				
+
 				System.out.println(wheel[0][1] + " " + wheel[1][1] + " " + wheel[2][1]);
 				System.out.println("Would you like to play again? You have " + tokens + " tokens.");
 				answer = keyboard.next();
 			}while(answer.toLowerCase().equals("y"));	
 
 			//Output if loop is ended
-			
+
 			if (answer.toLowerCase().equals("n"));
 			{
 				System.out.println("Thanks for playing! You ended with " + tokens + " tokens!");
