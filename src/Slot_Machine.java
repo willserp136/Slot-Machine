@@ -179,7 +179,7 @@ public class Slot_Machine
 				if (wheel[0][1] != wheel[1][1] && wheel[0][1] != wheel[2][1] && wheel[1][1] != wheel[0][1] && wheel[1][1] != wheel[2][1] && wheel[2][1] != wheel[0][1] && wheel[2][1] != wheel[1][1])
 				{
 
-					if(wheel[0][1] == -2)
+					if(wheel[0][1] == -2 || wheel[1][1] == -2 || wheel[2][1] == -2 )
 					{
 						tokens += 3;
 						System.out.println("Congratulations! You've won 3 tokens!");
