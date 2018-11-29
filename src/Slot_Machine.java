@@ -1,4 +1,4 @@
-import java.util.*;
+iimport java.util.*;
 public class Slot_Machine
 {
 	public static void main (String [] args)
@@ -17,13 +17,13 @@ public class Slot_Machine
 
 		//Slot Machine start and Key
 		System.out.println ("Welcome to the Wentworth Slot Machine!");
-		System.out.println("-1 equals Blank");
-		System.out.println("-2 equals Cherry");
-		System.out.println("-3 equals Bar");
-		System.out.println("-4 equals Double Bar");
-		System.out.println("-5 equals Triple Bar");
-		System.out.println("-6 equals Red 7");
-		System.out.println("-7 equals Jackpot");
+		System.out.println("-1 equals Blank. " + "Blanks cannot win you anything");
+		System.out.println("-2 equals Cherry." + " A combo of three cherries win 12 tokens, a combo of two win 6 tokens and just one wins 3 tokens");
+		System.out.println("-3 equals Bar. " + "Three Bars win 25 tokens. " + "Any combo of three different bars win 12 tokens");
+		System.out.println("-4 equals Double Bar. " + "Three double bars win 50 tokens");
+		System.out.println("-5 equals Triple Bar. " + "Three triple bars win 100 tokens");
+		System.out.println("-6 equals Red 7. " + " Three red 7's win 300 tokens");
+		System.out.println("-7 equals Jackpot. " + "Three Jackpots win 1,667 tokens");
 		System.out.println ("--Slot Machine--");
 		System.out.println("You have " + tokens + " tokens. Each pull costs 1 token. Would you like to play? (Y for yes, N for no)");
 
