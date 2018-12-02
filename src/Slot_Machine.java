@@ -1,5 +1,5 @@
 import java.util.*;
-public class Slot_Machine
+public class SlotMachine
 {
 	public static void main (String [] args)
 	{
